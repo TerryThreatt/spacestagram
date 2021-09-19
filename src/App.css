@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.astronomy-cards ul{
+  display: flex;
+  align-content: center;
+}
+
+.astronomy-cards li {
+  margin: 15px 15px;
+  list-style: none;
+}
