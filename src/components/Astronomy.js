@@ -1,20 +1,22 @@
 import React from 'react'
 import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 
 import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+
+import Checkbox from '@mui/material/Checkbox'
 
 function Astronomy(props) {
+
     return (
         <div className="astronomy-cards">
             <ul>
-                {props && props.data.map(pod => (
-                    <li>
-                        <Card sx={{ maxWidth: 345 }}>
+                {props && props.data.map((pod, index) => (
+                    <li key={index}>
+                        <Card sx={{ maxWidth: 345 }} >
                             <CardMedia
                                 component="img"
                                 height="140"
@@ -22,16 +24,17 @@ function Astronomy(props) {
                                 alt={pod.title}
                             />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
+                                <Typography gutterBottom variant="h6" component="div">
                                 {pod.title}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary" maxHeight="350px" sx={{ display: 'block', overflow: 'auto'}}>
+                                <Typography gutterBottom variant="h7" component="div">
+                                Date: {pod.date}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary" maxHeight="250px" sx={{ display: 'block', overflow: 'auto'}}>
                                 {pod.explanation}
                                 </Typography>
                             </CardContent>
-                            <CardActions>
-                                <IconButton size="small"><FavoriteBorderIcon>Like</FavoriteBorderIcon></IconButton>
-                            </CardActions>
+                            <Checkbox  icon={<FavoriteBorderIcon />} checkedIcon={<FavoriteIcon />} />
                         </Card>
                     </li>
                 ))}

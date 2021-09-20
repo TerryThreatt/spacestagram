@@ -37,12 +37,14 @@
   }
 }
 
-.astronomy-cards ul{
+.astronomy-cards ul {
   display: flex;
   align-content: center;
+  flex-wrap:  wrap;
 }
 
 .astronomy-cards li {
-  margin: 15px 15px;
+  margin: 25px;
   list-style: none;
+  flex-basis: 250px;
 }
